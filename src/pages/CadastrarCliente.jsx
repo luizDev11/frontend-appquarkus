@@ -1,5 +1,6 @@
 import { useState } from "react";
 import api from "../services/api";
+import Header from "../components/Header";
 
 function CadastrarCliente() {
 
@@ -37,6 +38,8 @@ function CadastrarCliente() {
 
     return (
         <div>
+            <Header />
+
             <h1>Cadastrar Cliente</h1>
 
             {mensagem && <p style={{ color: "green" }}>{mensagem}</p>}

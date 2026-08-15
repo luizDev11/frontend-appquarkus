@@ -1,10 +1,14 @@
 import {Link} from 'react-router-dom';
+import Header from "../components/Header";
 
 function Home (){
 
     return (
         
         <div>
+
+            <Header />
+
             <h1>Estudios de cílios</h1>
 
             <Link to="/clientes/cadastrar">

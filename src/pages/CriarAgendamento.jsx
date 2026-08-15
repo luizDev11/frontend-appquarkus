@@ -1,5 +1,6 @@
 import { useState } from "react";
 import api from "../services/api";
+import Header from "../components/Header";
 
 function CriarAgendamento() {
 
@@ -66,6 +67,9 @@ function CriarAgendamento() {
 
     return (
         <div>
+
+            <Header />
+
             <h1>Criar Agendamento</h1>
 
             {mensagem && <p style={{ color: "green" }}>{mensagem}</p>}

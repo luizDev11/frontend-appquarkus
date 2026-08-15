@@ -1,5 +1,6 @@
 import api from "../services/api";
 import { useState, useEffect } from "react";
+import Header from "../components/Header";
 
 function VerAgendamentos() {
 
@@ -20,6 +21,9 @@ function VerAgendamentos() {
 
     return (
         <div>
+
+            <Header />
+
             <h1>Agendamentos</h1>
 
             {agendamentos.length === 0 && (

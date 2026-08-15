@@ -1,5 +1,6 @@
 import api from "../services/api";
 import { useState, useEffect } from "react";
+import Header from "../components/Header";
 
 function Clientes() {
 
@@ -20,6 +21,9 @@ function Clientes() {
 
     return (
         <div>
+
+            <Header />
+
             <h1>Clientes</h1>
 
             {clientes.length === 0 && (
