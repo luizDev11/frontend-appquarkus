@@ -1,0 +1,122 @@
+/* Container principal */
+.mini-calendario-simples {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Grid do calendário */
+.calendario-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px; /* 🔥 AUMENTEI o espaço entre os dias */
+}
+
+/* ===== CABEÇALHO ===== */
+.calendario-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px; /* 🔥 AUMENTEI o espaço entre os dias */
+    margin-bottom: 10px; /* 🔥 AUMENTEI a margem */
+    grid-column: 1 / -1;
+}
+
+.header-dia {
+    font-size: 13px; /* 🔥 AUMENTEI a fonte */
+    font-weight: 700;
+    text-align: center;
+    padding: 8px 0; /* 🔥 AUMENTEI o padding */
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* 🔥 DOMINGO no cabeçalho - vermelho */
+.header-domingo {
+    color: #d32f2f;
+    background: #ffebee;
+    border-radius: 6px; /* 🔥 AUMENTEI o border-radius */
+}
+
+/* ===== DIAS ===== */
+.dia {
+    padding: 14px 4px; /* 🔥 AUMENTEI o padding vertical */
+    text-align: center;
+    font-size: 16px; /* 🔥 AUMENTEI a fonte */
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #f8f9fa;
+    color: #333;
+    transition: all 0.2s ease;
+    /* 🔥 NOVO: Força o dia a ficar QUADRADO */
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px; /* 🔥 Garante altura mínima */
+}
+
+.dia:hover {
+    background: #e9ecef;
+    transform: scale(1.05);
+}
+
+/* 🔥 DOMINGO - destaque em vermelho */
+.dia.domingo {
+    background: #ffebee;
+    color: #d32f2f;
+    font-weight: 700;
+}
+
+.dia.domingo:hover {
+    background: #ffcdd2;
+    transform: scale(1.05);
+}
+
+/* 🔥 DIA DE HOJE - destaque em verde */
+.dia.hoje {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-weight: 700;
+    border: 2px solid #4caf50;
+}
+
+/* 🔥 Se hoje for domingo - combinação */
+.dia.hoje.domingo {
+    background: #ffebee;
+    color: #d32f2f;
+    border: 2px solid #d32f2f;
+}
+
+/* ===== DIAS VAZIOS ===== */
+.dia-vazio {
+    padding: 14px 4px; /* 🔥 AUMENTEI o padding */
+    aspect-ratio: 1 / 1; /* 🔥 NOVO: Mantém o quadrado */
+    min-height: 50px; /* 🔥 Garante altura mínima */
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 480px) {
+    .mini-calendario-simples {
+        padding: 12px;
+    }
+
+    .dia {
+        padding: 10px 2px;
+        font-size: 14px;
+        min-height: 40px;
+    }
+
+    .header-dia {
+        font-size: 11px;
+        padding: 6px 0;
+    }
+
+    .dia-vazio {
+        min-height: 40px;
+    }
+}

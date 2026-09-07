@@ -1,6 +1,6 @@
 import api from "../services/api";
 import { useState, useEffect } from "react";
-import Header from "../components/Header";
+import Header from "../components/Header/Header.jsx";
 
 function VerAgendamentos() {
 

@@ -1,0 +1,19 @@
+.layout {
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+/* Área que fica ao lado da Sidebar */
+
+.layout-content {
+    margin-left: 240px;
+    min-height: 100vh;
+}
+
+
+/* Conteúdo das páginas */
+
+.page-content {
+    padding: 30px;
+}
