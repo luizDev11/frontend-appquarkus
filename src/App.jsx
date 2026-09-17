@@ -9,6 +9,10 @@ import Sobre from "./pages/Sobre";
 import Contato from "./pages/Contato";
 import Servico from "./pages/Servico";
 import Calendario from './components/Calendario/Calendario.jsx';
+import CadastrarServico from './pages/CadastrarServico';
+import VerServicos from "./pages/VerServicos.jsx";
+import NovosEsteMes from "./pages/NovosEsteMes.jsx";
+
 
 function App(){
   return (
@@ -22,7 +26,10 @@ function App(){
         <Route path="/sobre" element={<Sobre />} />
         <Route path="/contato" element={<Contato />} />
         <Route path="/servicos" element={<Servico />} />
+        <Route path="/cadastrar/servico" element={<CadastrarServico />} />
+        <Route path="/ver/servico" element={<VerServicos />} />
         <Route path="/calendario" element={<Calendario />} />
+        <Route path="/novosEsteMes" element={<NovosEsteMes />} />
       </Routes>
     </BrowserRouter>
   )

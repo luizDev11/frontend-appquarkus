@@ -2,6 +2,7 @@
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
+    background-color: var(--color-marromClaro);
 }
 
 .cards-grid {
@@ -104,40 +105,43 @@
 
 /* CARD - RETÂNGULO PEQUENO */
 .small-card {
-    width: 200px;           /* Largura do retângulo */
-    height: 80px;           /* Altura do retângulo (aumentei um pouco) */
-    background: #ffffff;
-    border-radius: 8px;     /* Borda menos arredondada */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    height: 80px;
+    box-sizing: border-box;
+
+    background-color: var(--color-marromElegante);
+    border: 2px solid var(--color-accent);
+    border-radius: 8px;
+
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 2px solid #667eea;
-    padding: 0;             /* 🔥 Remove padding do card */
-    overflow: hidden;       /* 🔥 Força o tamanho */
-}
 
-/* BOTÃO DENTRO DO RETÂNGULO */
-.small-card button {
-    width: 100%;            /* Ocupa todo o card */
-    height: 100%;           /* Ocupa todo o card */
-    border: none;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    border-radius: 6px;     /* Borda arredondada pequena */
-    font-size: 11px;        /* Fonte pequena */
+    text-decoration: none;
     cursor: pointer;
-    padding: 0;             /* 🔥 Remove padding do botão */
-    margin: 0;              /* Remove margem */
-    white-space: nowrap;    /* Texto em uma linha */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+    transition: 0.2s ease;
+}
+.small-card:hover {
+    background-color: var(--color-nudeAmarronzado);
+    border-color: var(--color-primary);
+}
+.small-card strong {
+    color: #5C3A2E;
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 5px;
 }
 
-.small-card button:hover {
-    background: linear-gradient(135deg, #5a67d8 0%, #6b46a1 100%);
+.small-card span {
+    color: #5C3A2E;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
 }
+
+
 .bigger-card {
     width: 500px;
     height: 400px;
@@ -166,7 +170,7 @@
 /* Parte de cima (grande) */
 .parte-cima {
     flex: 2;                /* Ocupa 2/3 do espaço */
-    background: #f0f4ff;
+    background: var(--color-marromElegante);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -174,6 +178,9 @@
     font-weight: bold;
     color: #667eea;
 
+}
+.parte-cima:hover{
+    background: var(--color-nudeAmarronzado);
 }
 
 /* Parte de baixo (dois menores) */
@@ -196,31 +203,26 @@
 }
 
 .parte-baixo-esquerda {
-    background: #e8edff;
+    background: var(--color-marromElegante);
 
 }
+
+.parte-baixo-esquerda:hover {
+    background: var(--color-nudeAmarronzado);
+}
+
 
 .parte-baixo-direita {
-    background: #dce4ff;
+    background: var(--color-marromElegante);
 }
 
-   .small-card button {
-       display: flex;
-       flex-direction: column;
-       align-items: center;
-       justify-content: center;
-
-       gap: 8px;
-   }
-
-
-.small-card button span {
-    font-size: 16px;
+.parte-baixo-direita:hover {
+    background: var(--color-nudeAmarronzado);
+    color: var(--color-background);
 }
 
 
-.small-card button strong {
-    font-size: 32px;
-    font-weight: bold;
-}
+
+
+
 

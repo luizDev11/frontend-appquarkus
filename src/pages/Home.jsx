@@ -2,7 +2,7 @@ import {Link} from 'react-router-dom';
 import Layout from "../Layout/Layout.jsx";
 import './Home.modules.css';
 import MiniCalendario from "../components/Calendario/MiniCalendario.jsx";
-import { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react';
 
 function Home() {
 
@@ -46,30 +46,27 @@ function Home() {
             <div>
                 <div className="cards-grid">
 
-                    <div className="small-card">
-                        <Link to="/clientes/ver">
-                            <button>
-                                <span>Total Clientes</span>
-                                <strong>
-                                    {totalClientes === null
-                                        ? "..."
-                                        : totalClientes}
-                                </strong>
-                            </button>
-                        </Link>
-                    </div>
+
+                    <Link to="/clientes/ver" className="small-card">
+
+                        <span>Total Clientes</span>
+                        <strong>
+                            {totalClientes === null
+                                ? "..."
+                                : totalClientes}
+                        </strong>
+
+                    </Link>
 
 
-                    <div className="small-card">
+                    <Link to="/ver/servico" className="small-card">
+                        <span>Serviços</span>
+                    </Link>
 
-                        <button>Taxa retenção</button>
-                    </div>
 
-
-                    <div className="small-card">
-
-                        <button>Novos este mês</button>
-                    </div>
+                    <Link to="/novosEsteMes" className="small-card">
+                        <span>Novos este mês</span>
+                    </Link>
 
 
                     <div className="small-card">
@@ -86,64 +83,59 @@ function Home() {
                     </div>
 
                     <div className="bigger-card">
-                        <div className="parte-cima">
-                            <Link to="/clientes/ver">
-                                <button>Visão geral dos clientes</button>
-                            </Link>
 
-                        </div>
+                        <Link to="/clientes/ver" className="parte-cima">
+                            Visão geral dos clientes
+                        </Link>
+
+
                         <div className="parte-baixo">
-                            <div className="parte-baixo-esquerda">
+
+                            <Link to="/cadastrar/servico" className="parte-baixo-esquerda">
+                                Criar Serviço
+                            </Link>
+
+                            <Link to="/agendamento/ver" className="parte-baixo-direita">
+                                Agendamentos
+                            </Link>
+                        </div>
+                    </div>
+
+
+                    <div className="home-container">
+                        <div className="cards-grid">
+                            <div className="single-card">
                                 <Link to="/clientes/cadastrar">
-                                    <button>Cadastrar novos (clientes/serviços)</button>
+                                    <button>Cadastrar Clientes</button>
                                 </Link>
                             </div>
-                            <div className="parte-baixo-direita">
+
+                            <br/>
+                            <br/>
+                            <div className="single-card">
+                                <Link to="/clientes/ver">
+                                    <button>Ver Clientes</button>
+                                </Link>
+                            </div>
+
+                            <br/>
+                            <br/>
+                            <div className="single-card">
+                                <Link to="/agendamento/criar">
+                                    <button>Criar Agendamento</button>
+                                </Link>
+                            </div>
+
+                            <br/>
+                            <br/>
+                            <div className="single-card">
                                 <Link to="/agendamento/ver">
-                                    <button>Agendamentos</button>
+                                    <button>Ver Agendamentos</button>
                                 </Link>
                             </div>
                         </div>
-
-                    </div>
-
-                </div>
-
-
-                <div className="home-container">
-                    <div className="cards-grid">
-                        <div className="single-card">
-                            <Link to="/clientes/cadastrar">
-                                <button>Cadastrar Clientes</button>
-                            </Link>
-                        </div>
-
-                        <br/>
-                        <br/>
-                        <div className="single-card">
-                            <Link to="/clientes/ver">
-                                <button>Ver Clientes</button>
-                            </Link>
-                        </div>
-
-                        <br/>
-                        <br/>
-                        <div className="single-card">
-                            <Link to="/agendamento/criar">
-                                <button>Criar Agendamento</button>
-                            </Link>
-                        </div>
-
-                        <br/>
-                        <br/>
-                        <div className="single-card">
-                            <Link to="/agendamento/ver">
-                                <button>Ver Agendamentos</button>
-                            </Link>
-                        </div>
                     </div>
                 </div>
-
             </div>
         </Layout>
     )
