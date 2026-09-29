@@ -69,9 +69,10 @@ function Home() {
                     </Link>
 
 
-                    <div className="small-card">
-                        <button>Agendamentos hoje</button>
-                    </div>
+                    <Link to="/agendamentosHoje" className="small-card">
+                        <span>Agendamentos hoje</span>
+                    </Link>
+
                 </div>
 
                 <br/>

@@ -1,0 +1,150 @@
+.agendamentos-page {
+    min-height: 100vh;
+    background: #FDF8F4;
+}
+
+.agendamentos-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 45px 30px;
+}
+
+/* Cabeçalho */
+.agendamentos-header {
+    margin-bottom: 30px;
+}
+
+.agendamentos-header h1 {
+    margin: 0;
+    color: #5C3A2E;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.agendamentos-header p {
+    margin-top: 8px;
+    margin-bottom: 0;
+    color: #8A6A5B;
+    font-size: 15px;
+}
+
+/* Lista */
+.agendamentos-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Card */
+.agendamento-card {
+    background: #FFFFFF;
+    border: 1px solid #EBD8CC;
+    border-radius: 14px;
+    padding: 22px 25px;
+    box-shadow: 0 4px 12px rgba(92, 58, 46, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.agendamento-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 18px rgba(92, 58, 46, 0.10);
+}
+
+/* Parte superior do card */
+.agendamento-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.agendamento-card-header h2 {
+    margin: 0;
+    color: #5C3A2E;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+/* Status */
+.agendamento-status {
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: #F7E4D8;
+    color: #8A5A43;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Informações */
+.agendamento-info {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    padding-top: 18px;
+    border-top: 1px solid #F0E2DA;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.info-item span {
+    color: #9A7A6B;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.info-item strong {
+    color: #5C3A2E;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Nenhum agendamento */
+.agendamentos-vazio {
+    padding: 40px;
+    background: #FFFFFF;
+    border: 1px solid #EBD8CC;
+    border-radius: 14px;
+    text-align: center;
+}
+
+.agendamentos-vazio p {
+    margin: 0;
+    color: #8A6A5B;
+    font-size: 15px;
+}
+
+/* Responsividade */
+@media (max-width: 800px) {
+    .agendamento-info {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .agendamentos-container {
+        padding: 30px 18px;
+    }
+
+    .agendamentos-header h1 {
+        font-size: 26px;
+    }
+
+    .agendamento-card {
+        padding: 18px;
+    }
+
+    .agendamento-card-header {
+        align-items: flex-start;
+        gap: 10px;
+        flex-direction: column;
+    }
+
+    .agendamento-info {
+        grid-template-columns: 1fr 1fr;
+    }
+}

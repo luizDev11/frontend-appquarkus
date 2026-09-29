@@ -12,6 +12,8 @@ import Calendario from './components/Calendario/Calendario.jsx';
 import CadastrarServico from './pages/CadastrarServico';
 import VerServicos from "./pages/VerServicos.jsx";
 import NovosEsteMes from "./pages/NovosEsteMes.jsx";
+import AgendamentosHoje from "./pages/AgendamentosHoje.jsx";
+import EditarServico from "./pages/EditarServico.jsx";
 
 
 function App(){
@@ -30,6 +32,9 @@ function App(){
         <Route path="/ver/servico" element={<VerServicos />} />
         <Route path="/calendario" element={<Calendario />} />
         <Route path="/novosEsteMes" element={<NovosEsteMes />} />
+        <Route path="/agendamentosHoje" element={<AgendamentosHoje />} />
+        <Route path="/editarServico/:id" element={<EditarServico />} />
+
       </Routes>
     </BrowserRouter>
   )

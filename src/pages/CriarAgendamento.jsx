@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {useState, useEffect} from "react";
 import api from "../services/api";
 import Header from "../components/Header/Header.jsx";
 
@@ -11,8 +11,26 @@ function CriarAgendamento() {
 
     const [data, setData] = useState("");
     const [hora, setHora] = useState("");
-    const [servico, setServico] = useState("");
+
+    const [servicos, setServicos] = useState([]);
+    const [servicoId, setServicoId] = useState("");
+
     const [mensagem, setMensagem] = useState("");
+
+    useEffect(() => {
+        carregarServicos();
+    }, []);
+
+    async function carregarServicos() {
+        try {
+            const resposta = await api.get("/servicos/ativos");
+
+            setServicos(resposta.data);
+
+        } catch (error) {
+            console.error("Erro ao carregar serviços:", error);
+        }
+    }
 
     async function verificarCliente(e) {
         e.preventDefault();
@@ -41,7 +59,7 @@ function CriarAgendamento() {
             telefone: clienteLogado.telefone,
             data: data,
             hora: hora,
-            servico: servico
+            servicoId: Number(servicoId)
         };
 
         try {
@@ -53,7 +71,7 @@ function CriarAgendamento() {
 
             setData("");
             setHora("");
-            setServico("");
+            setServicoId("");
 
             setTimeout(() => {
                 setMensagem("");
@@ -68,11 +86,11 @@ function CriarAgendamento() {
     return (
         <div>
 
-            <Header />
+            <Header/>
 
             <h1>Criar Agendamento</h1>
 
-            {mensagem && <p style={{ color: "green" }}>{mensagem}</p>}
+            {mensagem && <p style={{color: "green"}}>{mensagem}</p>}
 
             {!clienteLogado && (
                 <form onSubmit={verificarCliente}>
@@ -109,12 +127,18 @@ function CriarAgendamento() {
                         value={hora}
                         onChange={(e) => setHora(e.target.value)}
                     />
-                    <input
-                        type="text"
-                        placeholder="Serviço"
-                        value={servico}
-                        onChange={(e) => setServico(e.target.value)}
-                    />
+                    <select
+                        value={servicoId}
+                        onChange={(e) => setServicoId(e.target.value)}
+                    >
+                        <option value="">Selecione um serviço</option>
+
+                        {servicos.map((servico) => (
+                            <option key={servico.id} value={servico.id}>
+                                {servico.nome}
+                            </option>
+                        ))}
+                    </select>
                     <button type="submit">
                         Criar Agendamento
                     </button>

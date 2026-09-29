@@ -1,6 +1,7 @@
 import { useState } from "react";
 import api from "../services/api";
 import Header from "../components/Header/Header.jsx";
+import "./CadastrarCliente.css";
 
 function CadastrarCliente() {
 
@@ -37,38 +38,70 @@ function CadastrarCliente() {
     }
 
     return (
-        <div>
+        <div className= "cadastro-page">
+
             <Header />
 
-            <h1>Cadastrar Cliente</h1>
+            <main className="cadastro-container">
 
-            {mensagem && <p style={{ color: "green" }}>{mensagem}</p>}
+                <div className="cadastro-card">
 
-            <form onSubmit={cadastrarCliente}>
+                    <h1>Cadastrar Cliente</h1>
 
-                <input
-                    type="text"
-                    placeholder="Nome"
-                    value={nome}
-                    onChange={(e) => setNome(e.target.value)}
-                />
+                    <p className="cadastro-subtitulo">
+                        Adicione um novo cliente ao seu estúdio
+                    </p>
 
-                <br /><br />
+                    {mensagem && (
+                        <p className="mensagem-sucesso">
+                            {mensagem}
+                        </p>
+                    )}
 
-                <input
-                    type="text"
-                    placeholder="Telefone"
-                    value={telefone}
-                    onChange={(e) => setTelefone(e.target.value)}
-                />
+                    <form onSubmit={cadastrarCliente} className="cadastro-form">
 
-                <br /><br />
+                        <div className="campo">
 
-                <button type="submit">
-                    Salvar
-                </button>
+                            <label htmlFor="nome">
+                                Nome
+                            </label>
 
-            </form>
+                            <input
+                                id="nome"
+                                type="text"
+                                placeholder="Digite o nome do cliente"
+                                value={nome}
+                                onChange={(e) => setNome(e.target.value)}
+                            />
+
+                        </div>
+
+                        <div className="campo">
+
+                            <label htmlFor="telefone">
+                                Telefone
+                            </label>
+
+                            <input
+                                id="telefone"
+                                type="text"
+                                placeholder="Digite o telefone"
+                                value={telefone}
+                                onChange={(e) => setTelefone(e.target.value)}
+                            />
+
+                        </div>
+
+                        <button type="submit" className="botao-salvar">
+                            Salvar cliente
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </main>
+
         </div>
     );
 }

@@ -1,0 +1,205 @@
+
+.clientes-page {
+    min-height: 100vh;
+    background: #FDF8F4;
+}
+
+.clientes-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 45px 30px;
+}
+
+
+/* CABEÇALHO */
+
+.clientes-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 30px;
+}
+
+.clientes-header h1 {
+    margin: 0;
+
+    color: #5C3A2E;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.clientes-header p {
+    margin: 7px 0 0;
+
+    color: #8A7065;
+    font-size: 15px;
+}
+
+
+/* TOTAL DE CLIENTES */
+
+.total-clientes {
+    padding: 10px 18px;
+
+    background: #F7E4D8;
+    border: 1px solid #D4B483;
+    border-radius: 20px;
+
+    color: #5C3A2E;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* LISTA */
+
+.clientes-lista {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+
+/* CARD DO CLIENTE */
+
+.cliente-card {
+    display: flex;
+    align-items: center;
+
+    min-height: 90px;
+
+    padding: 18px 20px;
+
+    background: #FFFFFF;
+
+    border: 1px solid #E8D8CC;
+    border-radius: 14px;
+
+    box-shadow: 0 3px 12px rgba(92, 58, 46, 0.06);
+
+    transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease,
+            border-color 0.2s ease;
+}
+
+.cliente-card:hover {
+    transform: translateY(-3px);
+
+    border-color: #D4B483;
+
+    box-shadow: 0 8px 20px rgba(92, 58, 46, 0.10);
+}
+
+
+/* ÍCONE / PRIMEIRA LETRA */
+
+.cliente-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    background: #F7E4D8;
+
+    border: 1px solid #D9A78B;
+    border-radius: 50%;
+
+    color: #5C3A2E;
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+/* INFORMAÇÕES */
+
+.cliente-info {
+    margin-left: 15px;
+}
+
+.cliente-info h2 {
+    margin: 0 0 5px;
+
+    color: #5C3A2E;
+
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.cliente-info p {
+    margin: 0;
+
+    color: #8A7065;
+
+    font-size: 14px;
+}
+
+
+/* ID */
+
+.cliente-id {
+    margin-left: auto;
+
+    color: #B19A8D;
+
+    font-size: 12px;
+}
+
+
+/* NENHUM CLIENTE */
+
+.empty-state {
+    padding: 60px 30px;
+
+    background: #FFFFFF;
+
+    border: 1px dashed #D4B483;
+    border-radius: 16px;
+
+    text-align: center;
+}
+
+.empty-state h2 {
+    margin: 0 0 8px;
+
+    color: #5C3A2E;
+
+    font-size: 21px;
+}
+
+.empty-state p {
+    margin: 0;
+
+    color: #8A7065;
+
+    font-size: 14px;
+}
+
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 700px) {
+
+    .clientes-container {
+        padding: 30px 20px;
+    }
+
+    .clientes-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .clientes-lista {
+        grid-template-columns: 1fr;
+    }
+}
+

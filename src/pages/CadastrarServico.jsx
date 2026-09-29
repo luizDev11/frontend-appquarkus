@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {useState} from "react";
 import api from "../services/api";
 import Header from "../components/Header/Header.jsx";
 
@@ -37,39 +37,68 @@ function CadastrarServico() {
     }
 
     return (
-        <div>
-            <Header />
 
-            <h1>Cadastrar Serviço</h1>
+        <div className="cadastro-page">
 
-            {mensagem && <p style={{ color: "green" }}>{mensagem}</p>}
+            <Header/>
 
-            <form onSubmit={cadastrarServico}>
+            <main className="cadastro-container">
 
-                <input
-                    type="text"
-                    placeholder="Nome"
-                    value={nome}
-                    onChange={(e) => setNome(e.target.value)}
-                />
+                <div className="cadastro-card">
 
-                <br /><br />
+                    <h1>Cadastrar Serviço</h1>
 
-                <input
-                    type="text"
-                    placeholder="Valor"
-                    value={valor}
-                    onChange={(e) => setValor(e.target.value)}
-                />
+                    <p className="cadastro-subtitulo">
+                        Adicione um novo serviço ao seu estúdio
+                    </p>
 
-                <br /><br />
+                    {mensagem && (
+                        <p className="mensagem-sucesso">
+                            {mensagem}
+                        </p>
+                    )}
 
-                <button type="submit">
-                    Salvar
-                </button>
+                    <form onSubmit={cadastrarServico} className="cadastro-form">
 
-            </form>
+                        <div className="campo">
+
+                            <label htmlFor="nome">
+                                Nome
+                            </label>
+
+                            <input
+                                type="text"
+                                placeholder="Nome"
+                                value={nome}
+                                onChange={(e) => setNome(e.target.value)}
+                            />
+
+                        </div>
+
+                        <div className="campo">
+
+                            <label htmlFor="Valor">
+                                Valor
+                            </label>
+
+                            <input
+                                type="text"
+                                placeholder="Valor"
+                                value={valor}
+                                onChange={(e) => setValor(e.target.value)}
+                            />
+
+                        </div>
+
+                        <button type="submit" className="botao-salvar">
+                            Salvar Serviço
+                        </button>
+
+                    </form>
+                </div>
+            </main>
         </div>
+
     );
 }
 
